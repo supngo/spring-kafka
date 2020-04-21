@@ -1,0 +1,24 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+
+kafka:
+  topic:
+    name: ponyTopic
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    com.memorynotfound: DEBUG
+
+# kafka:
+#   topics:
+#   -
+#     name: pansyTopic
+#     num-partitions: 3
+#     replication-factor: 1
+#   -
+#     name: ponyTopic
+#     num-partitions: 3
+#     replication-factor: 1
