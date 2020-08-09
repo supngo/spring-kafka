@@ -21,11 +21,16 @@ public class KafKaConsumer {
 
   @KafkaListener(topics = "${kafka.topic.name}", groupId = "my-son")
   public void listen(@Payload String message, @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) Integer key) {
-    if(counter.get() % 50 == 0){
-      rateLimiter.setRate(rateLimiter.getRate()/2);
-    }
-    rateLimiter.acquire(1);
-    counter.incrementAndGet();
+    // if(counter.get() % 50 == 0){
+    // rateLimiter.setRate(rateLimiter.getRate()/2);
+    // }
+    // rateLimiter.acquire(1);
+    // counter.incrementAndGet();
+    // try {
+    //   Thread.sleep(2000);
+    // } catch (InterruptedException e) {
+    //   e.printStackTrace();
+    // }
     LOG.info("'{}-{}' at {} with {}", key, message, ZonedDateTime.now());   
   }
 }
